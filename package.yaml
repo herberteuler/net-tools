@@ -25,7 +25,7 @@ dependencies:
 - dhall
 - ping
 - rio
-- sqlite-simple
+- selda-sqlite
 
 library:
   source-dirs: src
