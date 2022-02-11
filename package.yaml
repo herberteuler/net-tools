@@ -1,0 +1,53 @@
+name:                net-tools
+version:             0.1.0.0
+github:              "herberteuler/net-tools"
+license:             BSD3
+author:              "Guanpeng Xu"
+maintainer:          "herberteuler@gmail.com"
+copyright:           "Guanpeng Xu"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Network
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/herberteuler/net-tools#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- cmdargs
+- dhall
+- ping
+- rio
+- sqlite-simple
+
+library:
+  source-dirs: src
+
+executables:
+  net-tools:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - net-tools
+
+tests:
+  net-tools-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - net-tools
