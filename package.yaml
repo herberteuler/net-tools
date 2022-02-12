@@ -26,6 +26,7 @@ dependencies:
 - ping
 - rio
 - selda-sqlite
+- text
 
 library:
   source-dirs: src

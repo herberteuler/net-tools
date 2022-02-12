@@ -1,6 +1,6 @@
 cabal-version: 1.12
 
--- This file has been generated from package.yaml by hpack version 0.34.6.
+-- This file has been generated from package.yaml by hpack version 0.34.5.
 --
 -- see: https://github.com/sol/hpack
 
@@ -25,7 +25,7 @@ source-repository head
 
 library
   exposed-modules:
-      Lib
+      Config
   other-modules:
       Paths_net_tools
   hs-source-dirs:
@@ -37,6 +37,7 @@ library
     , ping
     , rio
     , selda-sqlite
+    , text
   default-language: Haskell2010
 
 executable net-tools
@@ -54,6 +55,7 @@ executable net-tools
     , ping
     , rio
     , selda-sqlite
+    , text
   default-language: Haskell2010
 
 test-suite net-tools-test
@@ -72,4 +74,5 @@ test-suite net-tools-test
     , ping
     , rio
     , selda-sqlite
+    , text
   default-language: Haskell2010
