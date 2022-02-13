@@ -7,10 +7,15 @@ module Config ( Config(..)
 
 import Dhall
 
-data Config = Config { configPingDb :: !Text
+data Config = Config { configPing :: !PingConfig
                      , configIps :: ![Server]
                      }
               deriving (Show)
+
+data PingConfig = PingConfig { pcDb :: !Text
+                             , pcTimeout :: !Natural
+                             }
+                  deriving (Show)
 
 data Server = Server { serverIpv4 :: !Text
                      , serverIpv6 :: !(Maybe Text)
@@ -23,9 +28,14 @@ data Server = Server { serverIpv4 :: !Text
           deriving (Show)
 
 config :: Decoder Config
-config = record (Config <$> field "ping-db" strictText
+config = record (Config <$> field "ping" ping
                         <*> field "servers" (list server)
                 )
+
+ping :: Decoder PingConfig
+ping = record (PingConfig <$> field "db" strictText
+                          <*> field "timeout" natural
+              )
 
 server :: Decoder Server
 server = record (Server <$> field "ipv4" strictText
