@@ -7,7 +7,7 @@ module Config ( Config(..)
 
 import Dhall
 
-data Config = Config { configDb :: !Text
+data Config = Config { configPingDb :: !Text
                      , configIps :: ![Server]
                      }
               deriving (Show)
@@ -23,7 +23,7 @@ data Server = Server { serverIpv4 :: !Text
           deriving (Show)
 
 config :: Decoder Config
-config = record (Config <$> field "db" strictText
+config = record (Config <$> field "ping-db" strictText
                         <*> field "servers" (list server)
                 )
 
