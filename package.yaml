@@ -21,12 +21,11 @@ description:         Please see the README on GitHub at <https://github.com/herb
 
 dependencies:
 - base >= 4.7 && < 5
-- cmdargs
 - dhall
+- optparse-applicative
 - ping
 - rio
 - selda-sqlite
-- text
 
 library:
   source-dirs: src
