@@ -25,7 +25,9 @@ dependencies:
 - optparse-applicative
 - ping
 - rio
+- selda
 - selda-sqlite
+- time
 
 library:
   source-dirs: src

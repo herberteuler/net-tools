@@ -37,7 +37,9 @@ library
     , optparse-applicative
     , ping
     , rio
+    , selda
     , selda-sqlite
+    , time
   default-language: Haskell2010
 
 executable net-tools
@@ -54,7 +56,9 @@ executable net-tools
     , optparse-applicative
     , ping
     , rio
+    , selda
     , selda-sqlite
+    , time
   default-language: Haskell2010
 
 test-suite net-tools-test
@@ -72,5 +76,7 @@ test-suite net-tools-test
     , optparse-applicative
     , ping
     , rio
+    , selda
     , selda-sqlite
+    , time
   default-language: Haskell2010
